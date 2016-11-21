@@ -1,0 +1,72 @@
+<ion-side-menus enable-menu-with-back-views="false" ng-controller="NewsCtrl">
+  <ion-side-menu-content>
+     <ion-nav-bar class="bar-stable" align-title="center">
+       <ion-nav-back-button class="button-clear" transitiontype="flip" direction="right" go-native>
+       </ion-nav-back-button>
+       <ion-nav-buttons side="left">
+         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+         </button>
+       </ion-nav-buttons>
+       <ion-nav-buttons side="right">
+
+       <button ng-click="doRefresh()" class="button button-icon button-clear ion-ios-reload" menu-toggle="right">
+       </button>
+
+     <a ui-sref="news.settings">
+       <button class="button button-icon button-clear ion-gear-b" menu-toggle="right">
+       </button>
+     </a>
+ </ion-nav-buttons>
+     </ion-nav-bar>
+     <ion-nav-view name="menuWorPress"></ion-nav-view>
+   </ion-side-menu-content>
+
+  <ion-side-menu side="left" width="220">
+    <ion-header-bar class="bar-stable menu_head">
+       <div class="row">
+         <div class="col col-25">
+            <img src="img/image.gif"/>
+         </div>
+         <div class="col col-75">
+           <p><p>
+            <a menu-close-keep-history href="#/news/profile" class="profile-name">Hi
+              <span ng-hide="isLoggedIn()" style="    color: #fff;
+    font-size: 20px;
+    font-family: Open Sans;">User</span>
+              <span ng-show="isLoggedIn()" ng-bind-html="firstname" style="color: #fff;
+    font-size: 20px;
+    font-family: Open Sans;"></span>
+            </a>
+         </div>
+       </div>
+    </ion-header-bar>
+    <ion-content class="menu_app">
+     <ion-list>
+        <ion-item menu-close  class="item-icon-left" href="#/news/home">
+               <i class="icon ion-ios-home-outline"></i>
+          Home
+        </ion-item>
+
+      <ion-item  menu-close  class="item item-icon-left"  href="#/news/themes">
+            <i class="icon ion-ios-list-outline"></i>
+            Channels
+        </ion-item>
+
+		<ion-item menu-close  class="item-icon-left" ng-click="shareArticle('Get the latest financial news, curated to save time at Finly. Download here.', AndroidAppUrl);">
+			<i class="icon ion-ios-shuffle"></i>
+         Share
+        </ion-item>
+         <ion-item menu-close class="item-icon-left" ng-show="isLoggedIn()" ng-click="logout()">
+			<i class="icon ion-ios-arrow-thin-right"></i>
+          Logout
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" ng-hide="isLoggedIn()" href="#/news/login">
+     <i class="icon ion-ios-arrow-thin-right"></i>
+         Login
+       </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

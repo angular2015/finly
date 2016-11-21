@@ -1,0 +1,36 @@
+<ion-view view-title="Settings">
+   <ion-content has-header="true">
+      <ul class="list">
+      	<li>
+           <div class="item item-divider">
+             Settings
+           </div>
+        </li>
+        <li class="item item-button-left" ng-click="shareArticle('Get the latest financial news, curated to save time at Finly. Download here.', AndroidAppUrl);">
+          	Share App
+          	<button class="button button-assertive setbut">
+            	<i class="icon ion-android-share-alt"></i>
+          	</button>
+        </li>
+        <li class="item item-button-left" ng-click="openLinkSystem(AndroidAppUrl);">
+				Rate App
+          	<button class="button button-assertive setbut">
+            	<i class="icon ion-ios-star-outline"></i>
+          	</button>
+        <li class="item item-button-left" ng-click="openLinkSystem('https://www.facebook.com/finlyapp');">
+        		Like us
+          	<button class="button button-positive setbut">
+            	<i class="icon ion-social-facebook"></i>
+          	</button>
+        </li>
+        <li class="item item-button-left" ng-click="openLinkSystem('https://twitter.com/finly_india');">
+        		Follow us
+          	<button class="button button-positive setbut">
+            	<i class="icon ion-social-twitter"></i>
+          	</button>
+        </li>
+
+      </ul>
+    </ion-content>
+
+</ion-view>

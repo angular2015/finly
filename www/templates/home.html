@@ -1,0 +1,67 @@
+<ion-view view-title="{{heading}}">
+    <ion-content scroll="false" >
+        <tab-slide-box tab="0">
+            <div class="tsb-icons bar bar-subheader sub_head">
+                <div class="tsb-ic-wrp">
+                    <ion-scroll direction="x" class="tsb-hscroll wide-as-needed">
+                        <a href="javascript:;" class="button" ng-click="active_tab = 1" ng-class="{'color_tab':active_tab == 1}">News</a>
+                        <a href="javascript:;" class="button" ng-click="active_tab = 2" ng-class="{'color_tab':active_tab == 2}">Ideas</a>
+                        <a href="javascript:;" class="button" ng-click="active_tab = 3" ng-class="{'color_tab':active_tab == 3}">Research</a>
+                    </ion-scroll>
+                </div>
+            </div>
+            <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+                <ion-slide>
+                    <ion-content class="detail_page" on-swipe-up="onSwipeUp()" on-swipe-down="onSwipeDown()">
+                        <div class="list listx " 
+                             ng-class="{'slideUp':swipe == 'up','slideDown':swipe == 'down'}"
+                             ng-repeat="item in items" ng-if="item_index == $index">
+                            <div class="det_img">
+                                <img ng-src="https://s3.ap-south-1.amazonaws.com/finlypro/articles/image{{item.finly_article_id}}.{{item.finly_article_image_ext}}"></img>
+
+
+                                <div class="det_head">
+                                    <h3>{{item.finly_article_name}} </h3>
+                                    <p class="name">
+                                        <i class="ion-ios-list-outline"></i> {{item.finly_channel_name}}
+                                        <span class="date">
+                                            <i class="ion-calendar"></i>{{item.finly_article_create_date}}
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item item-body item-post-main">
+                                <div ng-bind-html="item.finly_article_description">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/comingsoon.gif" width="80%" style="margin-left:40px; margin-top:20%;"/>
+
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/comingsoon.gif" width="80%" style="margin-left:40px; margin-top:20%;"/>
+
+                </ion-slide>
+            </ion-slide-box>
+        </tab-slide-box>
+    </ion-content>
+    <div class="tabs tabs-icon-left tabx">
+        <a class="tab-item" ng-show="items[item_index].finly_article_source" href="#/news/channel/{{items[item_index].finly_article_channelid}}" transitiontype="slide" direction="up" go-native>
+            <i class="icon ion-ios-list-outline"></i>
+            Channel Info
+        </a>
+        <a class="tab-item" ng-show="items[item_index].finly_article_source" ng-click="openLinkArticle(items[item_index].finly_article_source)">
+            <i class="icon ion-ios-paper"></i>
+            Full news
+        </a>
+        <a class="tab-item" ng-show="items[item_index].finly_article_source" ng-click="shareArticleImage('Get the latest financial news, curated to save time at Finly. Download here.', 'http://goo.gl/VlVwHz');">
+            <i class="icon ion-share"></i>
+            Share
+        </a>
+    </div>
+</ion-view>

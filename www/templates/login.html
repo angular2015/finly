@@ -1,0 +1,48 @@
+<!-- Login Screen - refer to login.scss -->
+<ion-view view-title="LOGIN">
+  <ion-content class="rubyonic-pane login-screen">
+
+  	<!-- Logo Section - center aligned by default -->
+  	<div class="logo">
+  		<img src="img/logo.jpg" class="logo-style" alt="">
+	</div>
+	<!-- End Logo Section -->
+
+	<!-- A description section. Useful for a short pitch -->
+  	<!-- <h4 class="description">A high-status theme pack for your next Ionic Project</h4> -->
+  	<!-- End description -->
+
+  	<!-- Login Form - note the modifier 'is-transparent' is for the form to be see through -->
+  	<div class="list list-inset listx login-form is-transparent login-style" data-ng-form name="loginForm">
+
+	  <label class="item item-input">
+	  	<i class="icon iconx ion-ipad"></i>
+	    <input type="text" placeholder="Mobile Number" ng-model="credentials.mobile_number" required>
+	  </label>
+
+	  <label class="item item-input">
+	  	<i class="icon iconx ion-android-unlock"></i>
+	    <input type="password" placeholder="Password" ng-model="credentials.password" required>
+	  </label>
+
+	  <div class="button-stack">
+	  	<button ng-click="login(credentials)" ng-disabled="loginForm.$invalid" class="button button-block main_btn">Login</button>
+	  	<a href="#/news/forgot"><button class="button button-stable button-block">Forgot Password?</button></a>
+	  </div>
+
+    <!-- Social Login -->
+    <div class="social-login">
+      <h6 class="divider">New User?</h6>
+      <div class="button-stack">
+        <a href="#/news/register"><button class="button button-block reg_btn main_btn">Register</button></a>
+      </div>
+    </div>
+    <!-- End Social Login -->
+
+	</div>
+	<!-- End Login Form-->
+
+
+
+  </ion-content>
+</ion-view>

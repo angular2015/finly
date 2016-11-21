@@ -1,0 +1,31 @@
+<ion-view view-title="Channel Profile">
+    <ion-content ng-repeat="item in items">
+        <div class="hero slide-up" style="background-image: url('https://s3.ap-south-1.amazonaws.com/finlypro/images/image{{item.finly_channel_id}}.{{item.finly_channel_image_ext}}');">
+            <div class="content">
+                <div class="avatar" style="background-image: url('https://s3.ap-south-1.amazonaws.com/finlypro/logos/logo{{item.finly_channel_id}}.{{item.finly_channel_logo_ext}}');"></div>
+                <h3><a class="light">{{item.finly_channel_name}}</a></h3>
+                <h4></h4>
+            </div>
+        </div>
+        <div class="tabs tabs-icon-top static">
+            <a ui-sref="app.activity" class="tab-item" style="border:1px solid #ccc;">
+                <h4 style="margin-top:6px; font-size:14px; font-weight:500;">{{item.total_articles}} <br/> Articles</h4>
+
+            </a>
+            <a ui-sref="app.friends" class="tab-item" style="border:1px solid #ccc;">
+                <h4 style="margin-top:6px; font-size:14px; font-weight:500;">0 <br/> Subscribed Users</h4>
+            </a>
+            <a ui-sref="app.gallery" class="tab-item" style="border:1px solid #ccc;">
+                <h4 style="margin-top:6px; font-size:14px; font-weight:500;">₹ {{item.finly_channel_price}}/mth <br/> {{item.finly_channel_plan}}</h4>
+            </a>
+        </div>
+        <h4 class="content padding double-padding-x">Joining Date : {{item.date}} <br/>
+        SEBI ID : Not Available</h4>
+
+
+        <div class="padding">
+          <p>{{item.finly_channel_description}}</p>
+                    <button ui-sref="app.profile" class="button button-block main_btn" href="#/app/profile"><i class="ion-checkmark-round"></i> Subscribed</button>
+                </div>
+    </ion-content>
+</ion-view>

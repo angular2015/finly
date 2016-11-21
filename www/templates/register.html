@@ -1,0 +1,61 @@
+<!-- Login Screen - refer to login.scss -->
+<ion-view view-title="REGISTER">
+  <ion-content class="rubyonic-pane login-screen">
+
+  	<!-- Logo Section - center aligned by default -->
+  	<div class="logo">
+  		<img src="img/logo.jpg" class="logo-style" alt="">
+	</div>
+	<!-- End Logo Section -->
+
+	<!-- A description section. Useful for a short pitch -->
+  	<!-- <h4 class="description">A high-status theme pack for your next Ionic Project</h4> -->
+  	<!-- End description -->
+
+  	<!-- Login Form - note the modifier 'is-transparent' is for the form to be see through -->
+  	<div class="list list-inset listx login-form is-transparent login-style" data-ng-form name="signUpForm">
+
+      <label class="item item-input">
+         <i class="icon iconx ion-person"></i>
+         <input type="text" placeholder="First Name" ng-model="user.firstname" required>
+       </label>
+       <label class="item item-input">
+         <i class="icon iconx ion-person"></i>
+         <input type="text" placeholder="Last Name" ng-model="user.lastname" required>
+       </label>
+       <label class="item item-input">
+         <i class="icon iconx ion-ipad"></i>
+         <input type="text" minlength="10" maxlength="10" placeholder="Mobile Number" ng-model="user.mobile_number" required>
+       </label>
+       <label class="item item-input">
+         <i class="icon iconx ion-at"></i>
+         <input type="email" placeholder="Email Address" ng-model="user.email" required>
+       </label>
+        <label class="item iconx item-input">
+         <i class="icon ion-android-unlock"></i>
+         <input type="password" placeholder="Password" ng-model="user.password" required>
+       </label>
+       <label class="item iconx item-input" style="color:#333;">
+        By registering, you agree to the T&C of Finly.
+      </label>
+
+	  <div class="button-stack">
+	  	<button ng-click="signUp()" ng-disabled="signUpForm.$invalid" class="button button-block main_btn">Register</button>
+	  </div>
+
+    <!-- Social Login -->
+    <div class="social-login">
+      <h6 class="divider">Already Registered?</h6>
+      <div class="button-stack">
+        <a href="#/news/login"><button class="button button-block reg_btn main_btn">Login</button></a>
+      </div>
+    </div>
+    <!-- End Social Login -->
+
+	</div>
+	<!-- End Login Form-->
+
+
+
+  </ion-content>
+</ion-view>
